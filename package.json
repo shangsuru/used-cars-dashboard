@@ -1,0 +1,25 @@
+{
+  "name": "used-cars-dashboard",
+  "version": "1.0.0",
+  "description": "scrapes ebay and displays data about used cars",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shangsuru/used-cars-dashboard.git"
+  },
+  "author": "Henry Helm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shangsuru/used-cars-dashboard/issues"
+  },
+  "homepage": "https://github.com/shangsuru/used-cars-dashboard#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.3",
+    "request": "^2.88.0"
+  }
+}
