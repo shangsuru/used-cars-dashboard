@@ -8,7 +8,7 @@ const CarSchema = new Schema({
   fuelType: String,
   mileage: Number,
   model: String,
-  price: String,
+  price: Number,
   ps: Number,
   yearOfRegistration: Number
 })
