@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import BarChart from "./BarChart";
 import DonutChart from "./DonutChart";
 import LineChart from "./LineChart";
@@ -24,8 +24,6 @@ const App = () => {
     priceData,
     performanceLabels,
     performanceData,
-    getChartLabels,
-    getChartData
   ] = carData();
 
   return (

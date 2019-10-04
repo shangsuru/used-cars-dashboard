@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import api from "../utils/api";
 
 export default () => {
@@ -88,8 +88,6 @@ export default () => {
     priceLabels,
     priceData,
     performanceLabels,
-    performanceData,
-    getChartLabels,
-    getChartData
+    performanceData
   ];
 };
