@@ -45,6 +45,7 @@ module.exports = {
       },
       { $group: { _id: "$color", count: { $sum: 1 } } }
     ])
+      .sort({ count: -1 })
       .then(colors => res.send(colors))
       .catch(next);
   },
