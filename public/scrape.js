@@ -5,10 +5,12 @@ const Car = require("../models/car");
 const BASE_URL = "https://www.ebay-kleinanzeigen.de";
 
 module.exports = function() {
+  // go through all search result pages for cars on ebay
   for (page = 1; page < 50; page++) {
     request(getPageLink(page), (error, response, html) => {
       if (!error && response.statusCode === 200) {
         let $ = cheerio.load(html);
+        // follow each link to a single listing and extract the car's data
         $(".ellipsis").each(function(index) {
           const linkToCarListing = $(this).attr("href");
           extractDataFromListing(BASE_URL + linkToCarListing);
@@ -16,7 +18,7 @@ module.exports = function() {
       }
     });
   }
-}
+};
 
 function getPageLink(page) {
   return `https://www.ebay-kleinanzeigen.de/s-autos/seite:${page}/c216`;

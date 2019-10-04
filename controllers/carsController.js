@@ -9,11 +9,14 @@ module.exports = {
   },
 
   getModels(req, res, next) {
-    Car.aggregate([{
-      $match: {
-        "model": { $ne: "" }
-      }
-    },{ $group: { _id: "$model", count: { $sum: 1 } } }])
+    Car.aggregate([
+      {
+        $match: {
+          model: { $ne: "" }
+        }
+      },
+      { $group: { _id: "$model", count: { $sum: 1 } } }
+    ])
       .sort({ count: -1 })
       .then(models => res.send(models))
       .catch(next);

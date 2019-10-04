@@ -9,7 +9,7 @@ const colors = [
   "rgba(153, 102, 255, 0.6)",
   "rgba(255, 159, 64, 0.6)",
   "rgba(255, 99, 132, 0.6)"
-]
+];
 
 const LineChart = ({ title, labels, data }) => {
   return (
@@ -22,7 +22,7 @@ const LineChart = ({ title, labels, data }) => {
               data: data,
               fill: true,
               pointRadius: 0,
-              backgroundColor: colors[Math.floor(Math.random() * 7)],
+              backgroundColor: colors[Math.floor(Math.random() * 7)]
             }
           ]
         }}
