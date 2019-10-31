@@ -10,7 +10,7 @@ const Car = require("./models/car");
 require("dotenv").config()
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/ebay", {
+mongoose.connect(process.env.MONGODB_URI || process.env.MONGOHQ_URL || process.env.MONGOLAB_URI|| "mongodb://localhost/ebay", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
