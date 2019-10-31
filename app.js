@@ -11,7 +11,7 @@ require('dotenv').config()
 
 mongoose.Promise = global.Promise
 mongoose.connect(
-  'mongodb://heroku_56pbblnw:54cerqlj1pikrrgt1s6eo0i690@ds241688.mlab.com:41688/heroku_56pbblnw',
+  'mongodb://admin:2PHdfJndMLpY@EB@ds241688.mlab.com:41688/heroku_56pbblnw',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
