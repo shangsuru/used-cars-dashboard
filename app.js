@@ -10,13 +10,10 @@ const Car = require('./models/car')
 require('dotenv').config()
 
 mongoose.Promise = global.Promise
-mongoose.connect(
-  process.env.DB,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  }
-)
+mongoose.connect(process.env.DB, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.static(path.join(__dirname, 'client', 'build')))
