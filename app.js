@@ -7,17 +7,24 @@ const routes = require("./routes/routes");
 const scrape = require("./public/scrape.js");
 const Car = require("./models/car");
 
+require("dotenv").config()
+
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost/ebay", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/ebay", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
 
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "client", "build")))
 app.use(cors());
 routes(app);
 
-const PORT = 3050;
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
+
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
   console.log("Running on port " + PORT);
 });
