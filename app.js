@@ -10,7 +10,7 @@ const Car = require('./models/car')
 require('dotenv').config()
 
 mongoose.Promise = global.Promise
-mongoose.connect(process.env.DB, {
+"mongodb://admin:admin123@ds241688.mlab.com:41688/heroku_56pbblnw", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
