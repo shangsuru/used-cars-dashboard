@@ -27,13 +27,15 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
 })
 
-const PORT = process.env.PORT || 8000
+const PORT = process.env.PORT || 3050
 app.listen(PORT, () => {
   console.log('Running on port ' + PORT)
 })
 
-setInterval(() => {
-  Car.remove({}).then(scrape())
-}, 86400000)
+// setInterval(() => {
+//   Car.remove({}).then(scrape())
+// }, 86400000)
+
+//scrape()
 
 module.exports = app
