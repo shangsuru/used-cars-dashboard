@@ -66,7 +66,7 @@ module.exports = {
         $project: {
           mileage: {
             $multiply: [
-              { $trunc: [{ $divide: ["$mileage", 10000] }, 0] },
+              { $trunc: [{ $divide: ["$mileage", 10000] }] },
               10000
             ]
           }
@@ -84,7 +84,7 @@ module.exports = {
       {
         $project: {
           price: {
-            $multiply: [{ $trunc: [{ $divide: ["$price", 1000] }, 0] }, 1000]
+            $multiply: [{ $trunc: [{ $divide: ["$price", 1000] }] }, 1000]
           }
         }
       },
@@ -100,7 +100,7 @@ module.exports = {
       {
         $project: {
           ps: {
-            $multiply: [{ $trunc: [{ $divide: ["$ps", 10] }, 0] }, 10]
+            $multiply: [{ $trunc: [{ $divide: ["$ps", 10] }] }, 10]
           }
         }
       },
